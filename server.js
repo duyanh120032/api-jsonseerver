@@ -128,16 +128,16 @@ server.post("/auth/register", (req, res) => {
     res.status(200).json({ new_user });
   });
 });
-server.post("/auth/verify", async (req, res) => {
-  // verify token
-  const token = req.body.access_token;
-  try {
-    const payload = await verifyToken(token);
-    res.status(200).json({ payload });
-  } catch (err) {
-    res.status(401).json({ err });
-  }
-});
+// server.post("/auth/verify", async (req, res) => {
+//   // verify token
+//   const token = req.body.access_token;
+//   try {
+//     const payload = await verifyToken(token);
+//     res.status(200).json({ payload });
+//   } catch (err) {
+//     res.status(401).json({ err });
+//   }
+// });
 
 server.use(router);
 
