@@ -128,6 +128,16 @@ server.post("/auth/register", (req, res) => {
     res.status(200).json({ new_user });
   });
 });
+server.get("/users", async (req, res) => {
+ 
+  
+  try {
+    
+    res.status(200).json({ userdb });
+  } catch (err) {
+    res.status(401).json({ err });
+  }
+});
 // server.post("/auth/verify", async (req, res) => {
 //   // verify token
 //   const token = req.body.access_token;
